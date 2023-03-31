@@ -1,0 +1,36 @@
+{
+    "name": "sayuprc/http-test-case",
+    "description": "Library for HTTP testing",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.3",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "psr/http-message": "^1.0",
+        "phpunit/phpunit": "^9.6"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.4",
+        "guzzlehttp/guzzle": "^7.5",
+        "guzzlehttp/psr7": "^2.4",
+        "phpstan/phpstan": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sayuprc\\HttpTestCase\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "sayuprc",
+            "email": "mkpoto15@gmail.com"
+        }
+    ],
+    "config": {
+        "platform": {
+            "php": "7.3"
+        },
+        "sort-packages": true
+    }
+}
