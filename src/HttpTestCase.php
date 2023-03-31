@@ -18,32 +18,32 @@ abstract class HttpTestCase extends TestCase
     /**
      * @var ClientInterface $httpClient
      */
-    private $httpClient;
+    private ClientInterface $httpClient;
 
     /**
      * @var RequestFactoryInterface $requestFactory
      */
-    private $requestFactory;
+    private RequestFactoryInterface $requestFactory;
 
     /**
      * @var UriFactoryInterface $uriFactory
      */
-    private $uriFactory;
+    private UriFactoryInterface $uriFactory;
 
     /**
      * @var StreamFactoryInterface $streamFactory
      */
-    private $streamFactory;
+    private StreamFactoryInterface $streamFactory;
 
     /**
      * @var RequestInterface|null $latestRequest
      */
-    private $latestRequest = null;
+    private ?RequestInterface $latestRequest = null;
 
     /**
      * @var ResponseInterface|null $latestResponse
      */
-    private $latestResponse = null;
+    private ?ResponseInterface $latestResponse = null;
 
     /**
      * @param string|null $name
@@ -241,7 +241,7 @@ abstract class HttpTestCase extends TestCase
             fwrite($resource, sprintf("\r\nContent-Type: %s", $contentType));
 
             if (is_resource($item['contents'])) {
-                $contents = stream_get_contents($item['contents'], -1, 0);
+                $contents = stream_get_contents($item['contents'], null, 0);
 
                 fclose($item['contents']);
             } else {
