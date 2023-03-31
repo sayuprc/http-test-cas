@@ -12,7 +12,7 @@ class TestResponse
     /**
      * @var ResponseInterface $response
      */
-    private $response;
+    private ResponseInterface $response;
 
     /**
      * @param ResponseInterface $response
@@ -31,7 +31,7 @@ class TestResponse
      *
      * @return static
      */
-    public function assertStatusCode(int $expected): TestResponse
+    public function assertStatusCode(int $expected): static
     {
         Assert::assertSame($expected, $this->response->getStatusCode());
 
@@ -46,7 +46,7 @@ class TestResponse
      *
      * @return static
      */
-    public function assertHeader(string $name, array $expected): TestResponse
+    public function assertHeader(string $name, array $expected): static
     {
         Assert::assertSame($expected, $this->getHeader($name));
 
@@ -61,7 +61,7 @@ class TestResponse
      *
      * @return static
      */
-    public function assertHeaderLine(string $name, string $expected): TestResponse
+    public function assertHeaderLine(string $name, string $expected): static
     {
         Assert::assertSame($expected, $this->getHeaderLine($name));
 
@@ -75,7 +75,7 @@ class TestResponse
      *
      * @return static
      */
-    public function assertLocation(string $expected): TestResponse
+    public function assertLocation(string $expected): static
     {
         Assert::assertSame($expected, $this->getHeaderLine('Location'));
 
@@ -89,7 +89,7 @@ class TestResponse
      *
      * @return static
      */
-    public function assertContentType(string $expected): TestResponse
+    public function assertContentType(string $expected): static
     {
         Assert::assertSame($expected, $this->getHeaderLine('Content-Type'));
 
@@ -103,7 +103,7 @@ class TestResponse
      *
      * @return static
      */
-    public function assertBody(string $expected): TestResponse
+    public function assertBody(string $expected): static
     {
         Assert::assertSame($expected, $this->getBody());
 
@@ -117,7 +117,7 @@ class TestResponse
      *
      * @return static
      */
-    public function assertBodyContains(string $needle): TestResponse
+    public function assertBodyContains(string $needle): static
     {
         Assert::assertStringContainsString($needle, $this->getBody());
 
@@ -131,7 +131,7 @@ class TestResponse
      *
      * @return static
      */
-    public function assertJson($expected): TestResponse
+    public function assertJson(string|array $expected): static
     {
         if (is_string($expected)) {
             $expected = json_decode($expected, true);
@@ -150,7 +150,7 @@ class TestResponse
      *
      * @return static
      */
-    public function assertJsonKey(string $key, $expected): TestResponse
+    public function assertJsonKey(string $key, mixed $expected): static
     {
         $jsonArray = json_decode($this->getBody(), true);
 
