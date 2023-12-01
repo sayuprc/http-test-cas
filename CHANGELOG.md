@@ -1,5 +1,17 @@
 # Change Log
 
+## v3.2.0 - 2023-12-01
+
+### Added
+
+- Add .editorconfig file.
+- Add .github directory.
+
+### Changed
+
+- Support for PHP 8.2 and 8.3.
+- Update libraries.
+
 ## v3.1.0 - 2023-04-15
 
 ### Added
