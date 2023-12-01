@@ -231,7 +231,7 @@ class TestResponse
      *
      * @return static
      */
-    public function assertJson(string|array $expected): static
+    public function assertJson(array|string $expected): static
     {
         if (is_string($expected)) {
             $expected = json_decode($expected, true);
@@ -249,7 +249,7 @@ class TestResponse
      *
      * @return static
      */
-    public function assertNotJson(string|array $expected): static
+    public function assertNotJson(array|string $expected): static
     {
         if (is_string($expected)) {
             $expected = json_decode($expected, true);
