@@ -5,7 +5,7 @@ description: "PHP environment setup"
 runs:
   using: composite
 
-strategy:
+  strategy:
       fail-fast: false
       matrix:
         operating-system: [ ubuntu-latest, windows-latest, macos-latest ]
