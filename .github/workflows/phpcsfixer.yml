@@ -4,7 +4,7 @@ on: pull_request
 
 jobs:
   lint:
-    name: PHP ${{ matrix.php-versions }})
+    name: PHP ${{ matrix.php-versions }}
 
     runs-on: ubuntu-latest
 
