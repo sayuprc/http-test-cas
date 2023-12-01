@@ -1,0 +1,19 @@
+name: PHP-CS-Fixer
+
+on: pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Run php-cs-fixer
+        run: vendor/bin/php-cs-fixer fix --path-mode=intersection --dry-run --diff .

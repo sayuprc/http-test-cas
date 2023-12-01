@@ -1,0 +1,19 @@
+name: PHPStan
+
+on: pull_request
+
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Run phpstan
+        run: vendor/bin/phpstan analyse --memory-limit=-1
