@@ -20,7 +20,7 @@ class HttpTestCaseTest extends HttpTestCase
     private const BASE_URI = 'https://httpbin.org/';
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     protected function getClient(): ClientInterface
     {
@@ -28,7 +28,7 @@ class HttpTestCaseTest extends HttpTestCase
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     protected function getRequestFactory(): RequestFactoryInterface
     {
@@ -36,7 +36,7 @@ class HttpTestCaseTest extends HttpTestCase
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     protected function getUriFactory(): UriFactoryInterface
     {
@@ -44,7 +44,7 @@ class HttpTestCaseTest extends HttpTestCase
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     protected function getStreamFactory(): StreamFactoryInterface
     {
