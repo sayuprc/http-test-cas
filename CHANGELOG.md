@@ -1,5 +1,16 @@
 # Change Log
 
+## v2.1.1 - 2023-12-02
+
+### Added
+
+- Add .editorconfig file.
+- Add .github directory.
+
+### Changed
+
+- Update libraries.
+
 ## v2.1.0 - 2023-04-15
 
 ### Added
