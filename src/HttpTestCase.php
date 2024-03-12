@@ -103,9 +103,20 @@ abstract class HttpTestCase extends TestCase
      */
     public function get(string $uri, array $options = []): TestResponse
     {
-        return new TestResponse(
-            $this->latestResponse = $this->httpClient->sendRequest($this->createRequest('GET', $uri, $options))
-        );
+        return $this->sendRequest('GET', $uri, $options);
+    }
+
+    /**
+     * Send a HEAD request
+     *
+     * @param string $uri
+     * @param array  $options
+     *
+     * @return TestResponse
+     */
+    public function head(string $uri, array $options = []): TestResponse
+    {
+        return $this->sendRequest('HEAD', $uri, $options);
     }
 
     /**
@@ -118,8 +129,74 @@ abstract class HttpTestCase extends TestCase
      */
     public function post(string $uri, array $options = []): TestResponse
     {
+        return $this->sendRequest('POST', $uri, $options);
+    }
+
+    /**
+     * Send a PUT request
+     *
+     * @param string $uri
+     * @param array  $options
+     *
+     * @return TestResponse
+     */
+    public function put(string $uri, array $options = []): TestResponse
+    {
+        return $this->sendRequest('PUT', $uri, $options);
+    }
+
+    /**
+     * Send a DELETE request
+     *
+     * @param string $uri
+     * @param array  $options
+     *
+     * @return TestResponse
+     */
+    public function delete(string $uri, array $options = []): TestResponse
+    {
+        return $this->sendRequest('DELETE', $uri, $options);
+    }
+
+    /**
+     * Send a OPTIONS request
+     *
+     * @param string $uri
+     * @param array  $options
+     *
+     * @return TestResponse
+     */
+    public function options(string $uri, array $options = []): TestResponse
+    {
+        return $this->sendRequest('OPTIONS', $uri, $options);
+    }
+
+    /**
+     * Send a PATCH request
+     *
+     * @param string $uri
+     * @param array  $options
+     *
+     * @return TestResponse
+     */
+    public function patch(string $uri, array $options = []): TestResponse
+    {
+        return $this->sendRequest('PATCH', $uri, $options);
+    }
+
+    /**
+     * Send a request
+     *
+     * @param string $method
+     * @param string $uri
+     * @param array  $options
+     *
+     * @return TestResponse
+     */
+    public function sendRequest(string $method, string $uri, array $options = []): TestResponse
+    {
         return new TestResponse(
-            $this->latestResponse = $this->httpClient->sendRequest($this->createRequest('POST', $uri, $options))
+            $this->latestResponse = $this->httpClient->sendRequest($this->createRequest($method, $uri, $options))
         );
     }
 
