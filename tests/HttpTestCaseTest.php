@@ -140,4 +140,100 @@ class HttpTestCaseTest extends HttpTestCase
         )->assertJsonKey('form.hoge', 'hoge value')
             ->assertJsonKey('files.file B', 'file contents');
     }
+
+    /**
+     * Testing PUT requests
+     *
+     * @return void
+     */
+    public function testPut(): void
+    {
+        $this->put(
+            self::BASE_URI . 'put',
+            [
+                'data' => [
+                    'key' => 'value',
+                    'nest' => [
+                        'key 1' => 'value 1',
+                    ],
+                ],
+            ]
+        )->assertStatusCode(200)
+            ->assertJsonKey('form.key', 'value')
+            ->assertJsonKey('form.nest[key 1]', 'value 1');
+
+        $this->put(self::BASE_URI . 'status/404')
+            ->assertStatusCode(404);
+
+        $this->put(
+            self::BASE_URI . 'put',
+            [
+                'multipart' => [
+                    [
+                        'name' => 'hoge',
+                        'contents' => 'hoge value',
+                    ],
+                    [
+                        'name' => 'file A',
+                        'filename' => 'fileA.txt',
+                        'contents' => fopen(__DIR__ . '/../README.md', 'r'),
+                    ],
+                    [
+                        'name' => 'file B',
+                        'filename' => 'fileB.txt',
+                        'contents' => 'file contents',
+                    ],
+                ],
+            ]
+        )->assertJsonKey('form.hoge', 'hoge value')
+            ->assertJsonKey('files.file B', 'file contents');
+    }
+
+    /**
+     * Testing DELETE requests
+     *
+     * @return void
+     */
+    public function testDelete(): void
+    {
+        $this->delete(
+            self::BASE_URI . 'delete',
+            [
+                'data' => [
+                    'key' => 'value',
+                    'nest' => [
+                        'key 1' => 'value 1',
+                    ],
+                ],
+            ]
+        )->assertStatusCode(200)
+            ->assertJsonKey('form.key', 'value')
+            ->assertJsonKey('form.nest[key 1]', 'value 1');
+
+        $this->delete(self::BASE_URI . 'status/404')
+            ->assertStatusCode(404);
+
+        $this->delete(
+            self::BASE_URI . 'delete',
+            [
+                'multipart' => [
+                    [
+                        'name' => 'hoge',
+                        'contents' => 'hoge value',
+                    ],
+                    [
+                        'name' => 'file A',
+                        'filename' => 'fileA.txt',
+                        'contents' => fopen(__DIR__ . '/../README.md', 'r'),
+                    ],
+                    [
+                        'name' => 'file B',
+                        'filename' => 'fileB.txt',
+                        'contents' => 'file contents',
+                    ],
+                ],
+            ]
+        )->assertJsonKey('form.hoge', 'hoge value')
+            ->assertJsonKey('files.file B', 'file contents');
+    }
 }
