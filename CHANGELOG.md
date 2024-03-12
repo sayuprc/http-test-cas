@@ -1,5 +1,17 @@
 # Change Log
 
+## v3.3.0 - 2024-03-12
+
+### Added
+
+- Add the following methods in HttpTestCase class.
+  - `head`
+  - `put`
+  - `delete`
+  - `options`
+  - `patch`
+  - `sendRequest`
+
 ## v3.2.0 - 2023-12-01
 
 ### Added

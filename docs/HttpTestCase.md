@@ -9,7 +9,13 @@
 |`getUriFactory()`|Get an instance of a class that implements the `Psr\Http\Message\UriFactoryInterface`|You need to implement it|
 |`getStreamFactory()`|Get an instance of a class that implements the `Psr\Http\Message\StreamFactoryInterface`|You need to implement it|
 |`get($uri, $options)`|Send a GET request||
+|`head($uri, $options)`|Send a HEAD request||
 |`post($uri, $options)`|Send a POST request||
+|`put($uri, $options)`|Send a PUT request||
+|`delete($uri, $options)`|Send a DELETE request||
+|`options($uri, $options)`|Send a OPTIONS request||
+|`patch($uri, $options)`|Send a PATCH request||
+|`sendRequest($method, $uri, $options)`|Send a request||
 
 ## Request options format
 
