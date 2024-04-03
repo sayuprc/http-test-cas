@@ -1,5 +1,15 @@
 # Change Log
 
+## v3.4.0 - 2024-04-03
+
+### Added
+
+- Add documents for Japanese.
+
+### Changed
+
+- Reviewed versions of dependent libraries.
+
 ## v3.3.0 - 2024-03-12
 
 ### Added
