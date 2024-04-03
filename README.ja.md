@@ -1,25 +1,25 @@
-**English | [日本語](./README.ja.md)**
+**[English](./README.md) | 日本語**
 
 # sayuprc/http-test-case
 
-A library for HTTP testing.
+HTTP テスト用のライブラリです。
 
-## Requirements
+## 要求
 
-|name|version|
+|名前|バージョン|
 |---|---|
 |PHP|^8.1|
 |PHPUnit|^10.0|
 
-## Installation
+## インストール方法
 
 ```
 composer require --dev sayuprc/http-test-case
 ```
 
-## Usage
+## 使い方
 
-Extend the `HttpTestCase` class and implement the following methods:
+`HttpTestCase` クラスを継承して以下のメソッドを実装してください。
 
 - `getClient()`
 - `getRequestFactory()`
@@ -61,7 +61,7 @@ class SampleTest extends HttpTestCase
 }
 ```
 
-### Testing a GET Request
+### GET リクエストのテスト
 
 ```php
 <?php
@@ -79,7 +79,7 @@ class SampleTest extends HttpTestCase
 }
 ```
 
-### Testing a POST Request
+### POST リクエストのテスト
 
 ```php
 <?php
@@ -107,6 +107,6 @@ class SampleTest extends HttpTestCase
 }
 ```
 
-## Documents
+## ドキュメント
 
-Please refer to the [here](./docs/en) for the methods and assertions of HttpTestCase.
+HttpTestCase のメソッドとアサーションについては、[こちら](./docs/ja/)を参照してください。

@@ -21,11 +21,11 @@
 
 ```php
 $options = [
-  'headers' => [],
-  'query' => [],
-  'data' => [],
-  'json' => [],
-  'multipart' => [],
+    'headers' => [],
+    'query' => [],
+    'data' => [],
+    'json' => [],
+    'multipart' => [],
 ];
 ```
 
@@ -36,13 +36,13 @@ The keys represent the header names, and the values can either be a string indic
 
 ```php
 $options = [
-  'headers' => [
-    'Content-Type' => 'application/json',
-    'Cookie' => [
-      'hoge=foo',
-      'fuga=bar',
+    'headers' => [
+        'Content-Type' => 'application/json',
+        'Cookie' => [
+            'hoge=foo',
+            'fuga=bar',
+        ],
     ],
-  ],
 ];
 ```
 
@@ -52,12 +52,12 @@ An array of query string parameters to add to the GET request.
 
 ```php
 $options = [
-  'query' => [
-    'hoge' => 'fuga',
-    'piyo' => [
-      'foo' => 'bar'
+    'query' => [
+        'hoge' => 'fuga',
+        'piyo' => [
+            'foo' => 'bar'
+        ],
     ],
-  ],
 ];
 ```
 
@@ -67,12 +67,12 @@ An array of data to be sent with the `application/x-www-form-urlencoded` content
 
 ```php
 $options = [
-  'data' => [
-    'hoge' => 'fuga',
-    'piyo' => [
-      'foo' => 'bar'
+    'data' => [
+        'hoge' => 'fuga',
+        'piyo' => [
+            'foo' => 'bar'
+        ],
     ],
-  ],
 ];
 ```
 
@@ -82,12 +82,12 @@ An array of data to be sent with the `application/json` content type.
 
 ```php
 $options = [
-  'json' => [
-    'hoge' => 'fuga',
-    'piyo' => [
-      'foo' => 'bar'
+    'json' => [
+        'hoge' => 'fuga',
+        'piyo' => [
+            'foo' => 'bar'
+        ],
     ],
-  ],
 ];
 ```
 
@@ -100,17 +100,17 @@ Each part can have an optional `content-type` specified. If not specified, text 
 
 ```php
 $options = [
-  'multipart' => [
-    [
-      'name' => 'hoge',
-      'contents' => 'foo',
+    'multipart' => [
+        [
+            'name' => 'hoge',
+            'contents' => 'foo',
+        ],
+        [
+            'name' => 'file',
+            'contents' => fopen('/path/to/file', 'r'),
+            'content-type' => 'image/png',
+            'filename' => 'file.png',
+        ]
     ],
-    [
-      'name' => 'file',
-      'contents' => fopen('/path/to/file', 'r'),
-      'content-type' => 'image/png',
-      'filename' => 'file.png',
-    ]
-  ],
 ];
 ```
