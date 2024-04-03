@@ -1,3 +1,5 @@
+**English | [日本語](./README.ja.md)**
+
 # sayuprc/http-test-case
 
 A library for HTTP testing.
@@ -107,4 +109,4 @@ class SampleTest extends HttpTestCase
 
 ## Documents
 
-Please refer to the [documentation](./docs/) for the methods and assertions of HttpTestCase.
+Please refer to the [here](./docs/en) for the methods and assertions of HttpTestCase.
